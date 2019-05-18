@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <title>Fruit Inventory - Mysql + Node Exercises</title>
+    </head>
+    <body>
+    <div class="container">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="#">Friut Inventory</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">HRM</a>
+            </li>
+        </ul>
+        <br/>
+        <h1>Add new fruits</h1>
+        <form method="POST" action="/fruits">            
+            <div class="form-group">
+                <label for="name">Fruit Name</label>
+                    <input id="name"class="form-control" name="fruit"/><br/>
+            </div>
+            <div class="form-group">
+                <label for="stock">Stock</label>
+                    <input id="stock" class="form-control" type="tel" name="stock"/><br/>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary">Save</button>
+            </div>        
+        </form>    
+        <h1>Fruits</h1>        
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Fruit Name</th>
+                    <th>Stock</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <% data.forEach( element => { %>
+                    <tr>
+                        <td><%= element.name %></td>
+                        <td><%= element.stock %></td>
+                        <td><a href="/fruits/<%= element.id %>/update">Edit</td>
+                        <td><a href="/fruits/<%= element.id %>/delete">Delete</td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>    
+    
+    </body>
+</html>

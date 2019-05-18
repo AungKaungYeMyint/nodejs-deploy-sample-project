@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <title>Fruit Inventory - Mysql + Node Exercises</title>
+    </head>
+    <body>
+    <div class="container">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="#">Friut Inventory</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">HRM</a>
+            </li>
+        </ul>
+        <br/>
+        
+        <form method="POST" action="/fruits/<%=data.id %>/delete">           
+            <h1>Are you sure you want to delete <%= data.name %>?</h1>
+            <div class="form-group">
+                <button class="btn btn-primary">Delete</button>
+            </div>        
+        </form>    
+        
+    </div>    
+    
+    </body>
+</html>
